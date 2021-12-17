@@ -89,8 +89,8 @@ type Pruner struct {
 }
 
 type BlockPruner struct {
-	db           ethdb.Database
-	chaindbDir   string
+	db ethdb.Database
+	//chaindbDir   string
 	ancientdbDir string
 	n            *node.Node
 }
@@ -128,8 +128,8 @@ func NewPruner(db ethdb.Database, datadir, trieCachePath string, bloomSize, trie
 func NewBlockPruner(db ethdb.Database, n *node.Node, chaindbDir, ancientdbDir string) (*BlockPruner, error) {
 
 	return &BlockPruner{
-		db:           db,
-		chaindbDir:   chaindbDir,
+		db: db,
+		//chaindbDir:   chaindbDir,
 		ancientdbDir: ancientdbDir,
 		n:            n,
 	}, nil
